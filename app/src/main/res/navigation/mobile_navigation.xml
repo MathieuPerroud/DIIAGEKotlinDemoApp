@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="diiage.potherat.demo.demoapp2.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="diiage.potherat.demo.demoapp2.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_quote_edit"
+        android:name="diiage.potherat.demo.demoapp2.ui.edit.QuoteEditFragment"
+        android:label="@string/quote_edit"
+        tools:layout="@layout/fragment_quote_edit" >
+        <action
+            android:id="@+id/action_nav_quote_edit_pop2"
+            app:popUpTo="@id/nav_quote_edit"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action android:id="@+id/action_global_nav_quote_edit" app:destination="@id/nav_quote_edit" />
+
+</navigation>
