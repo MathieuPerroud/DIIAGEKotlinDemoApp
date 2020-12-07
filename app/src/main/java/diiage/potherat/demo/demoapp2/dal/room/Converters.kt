@@ -4,7 +4,7 @@ import androidx.room.TypeConverter
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
-class Converters {
+object Converters {
     @TypeConverter
     fun convertLocalDateTimeToDatabase(dateTime:LocalDateTime): Long {
         return dateTime.toEpochSecond(ZoneOffset.UTC)

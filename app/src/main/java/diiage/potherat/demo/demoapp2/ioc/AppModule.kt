@@ -17,8 +17,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import javax.inject.Singleton
 
-// https://www.danstone.uk/2020/06/dependency-injection-hilt-room-database.html
-
 @InstallIn(ApplicationComponent::class)
 @Module
 class AppModule {
