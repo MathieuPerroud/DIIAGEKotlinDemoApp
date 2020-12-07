@@ -27,11 +27,6 @@ class AppModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): Database {
-        // Make sure a read is made before writing so our onCreate callback is executed first
-        /*database =  Room.databaseBuilder(
-             ntext,
-            Database::class.java, "database.db"
-        ).fallbackToDestructiveMigration().build()*/
         database =  Room.inMemoryDatabaseBuilder(
             context,
             Database::class.java,
@@ -39,14 +34,14 @@ class AppModule {
         return database
     }
 
-@Provides
-fun provideQuoteRepository(database: Database): QuoteRepository {
-return database.quoteDao()
-}
+    @Provides
+    fun provideQuoteRepository(database: Database): QuoteRepository {
+        return database.quoteDao()
+    }
 
-@Provides
-fun provideCoroutineDispatcher(): CoroutineDispatcher {
-return Dispatchers.IO
-}
+    @Provides
+    fun provideCoroutineDispatcher(): CoroutineDispatcher {
+        return Dispatchers.IO
+    }
 
 }
